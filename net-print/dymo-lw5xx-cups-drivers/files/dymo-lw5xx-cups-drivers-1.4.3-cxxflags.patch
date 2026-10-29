@@ -1,0 +1,16 @@
+Respect the user's CXXFLAGS: configure.ac overwrites them with -O2.
+Same fix as ::gentoo's dymo-cups-drivers-1.2.0-cxxflags.patch.
+
+--- a/configure.ac	2026-10-29 10:02:09.645259376 +0100
++++ b/configure.ac	2026-10-29 10:02:09.672540269 +0100
+@@ -75,9 +75,7 @@
+ AC_SUBST(cups_cflags)
+ 
+ warning_flags="-Wall -Wno-unknown-pragmas"
+-debug_flags=""
+-optimization_flags="-O2"
+-CXXFLAGS="${optimization_flags} ${warning_flags} ${debug_flags} ${cups_cflags}"
++CXXFLAGS="${CXXFLAGS} ${warning_flags} ${cups_cflags}"
+ 
+ AC_CHECK_LIB(cups, cupsMarkOptions, , AC_ERROR([Can't find cups library]))
+ AC_CHECK_LIB(cupsimage, cupsRasterReadHeader, , AC_ERROR([Can't find cupsimage library]))

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pkgmetadata SYSTEM "https://www.gentoo.org/dtd/metadata.dtd">
+<pkgmetadata>
+	<maintainer type="person">
+		<email>25772781+nvaert1986@users.noreply.github.com</email>
+	</maintainer>
+	<longdescription lang="en">
+		DYMO's CUPS drivers for the LabelWriter 550 series: the 550, 550
+		Turbo, 550 Pro, 550 Twin Pro, 5XL, 5XL Pro and LabelWriter Wireless,
+		plus the MobileLabeler tape printer. ::gentoo's
+		net-print/dymo-cups-drivers covers the LabelWriter 4xx and older; this
+		package installs alongside it, since DYMO named its newer filters
+		raster2dymolw_v2 and raster2dymolm_v2.
+
+		The filter reads the printer's status before every job, so it works
+		on queues that reach the printer directly (USB or network), not on raw
+		or Windows-shared queues. The 550 series only prints on DYMO labels;
+		the printer enforces that itself.
+	</longdescription>
+	<upstream>
+		<remote-id type="github">dymosoftware/Drivers</remote-id>
+	</upstream>
+</pkgmetadata>

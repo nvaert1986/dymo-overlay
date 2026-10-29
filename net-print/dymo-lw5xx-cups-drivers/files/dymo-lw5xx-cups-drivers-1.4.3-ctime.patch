@@ -1,0 +1,13 @@
+time() needs <ctime>; newer GCC no longer pulls it in through other headers:
+  LabelManagerLanguageMonitorV2.cpp:72:21: error: 'time' was not declared in this scope
+
+--- a/src/lm/LabelManagerLanguageMonitorV2.cpp	2026-10-29 10:02:09.651792534 +0100
++++ b/src/lm/LabelManagerLanguageMonitorV2.cpp	2026-10-29 10:02:09.672589587 +0100
+@@ -20,6 +20,7 @@
+ 
+ #include "LabelManagerLanguageMonitorV2.h"
+ 
++#include <ctime>
+ #include <unistd.h>
+ 
+ namespace DymoPrinterDriver
